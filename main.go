@@ -20,6 +20,7 @@ type Response struct {
 
 var (
 	defaultEnvironmentFilePath = "/etc/zookeeper-hosts"
+	defaultExhibitorURL        = "http://localhost:8181/exhibitor/v1/cluster/list"
 	environmentFilePath        string
 	exhibitorUrl               string
 )
@@ -27,7 +28,7 @@ var (
 func init() {
 	log.SetFlags(0)
 	flag.StringVar(&environmentFilePath, "o", defaultEnvironmentFilePath, "environment file")
-	flag.StringVar(&exhibitorUrl, "e", "http://localhost:8181/exhibitor/v1/cluster/list", "URL to exhibitor")
+	flag.StringVar(&exhibitorUrl, "e", defaultExhibitorURL, "URL to exhibitor")
 }
 
 func main() {
